@@ -19,9 +19,28 @@
     <title>Trabajo Practico 5 -Ejercicio6-</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <h1 class="my-3 text-center display-4 text-primary">Temporizador</h1>
+    </header>
+    <main>
+      <section class="text-center container">
+        <div class="my-3">
+          <label  class="my-3">Ingrese un tiempo en segundos</label>
+          <input id="inputNumero" type="number" min="0" />
+        </div>
+        <div>
+          <button id="iniciar" class="btn btn-primary">Iniciar</button>
+          <button id="pausar" class="btn btn-primary">Pausar</button>
+          <button id="reiniciar" class="btn btn-primary">Reiniciar</button>
+        </div>
+        <div id="temporizador" class="my-3">
+          <h3>00:00:00</h3>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center bg-info">
+        &copy;Derechos Reservados -Brito Augusto- 
+    </footer>
     <script src="./js/app.js"></script>
   </body>
 </html>
