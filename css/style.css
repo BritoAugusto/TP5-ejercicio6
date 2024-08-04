@@ -6,3 +6,12 @@ body{
 main{
     flex-grow: 1;
 }
+@media (min-width: 768px){
+    label{
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+    input{
+        margin-right: 5px;
+    };
+}
