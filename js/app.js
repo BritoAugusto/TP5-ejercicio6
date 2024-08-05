@@ -23,34 +23,39 @@ const iniciarTemporizador = () => {
     temporizadorIniciado = false;
     alert('El tiempo ha terminado');
     document.querySelector("#inputNumero").value = "";
+    btnIniciar.innerText = 'Iniciar';
   }
 };
 
 btnIniciar.addEventListener('click', ()=>{
-    document.querySelector('label').innerText = 'Espere a que el tiempo se termine';
     if (!temporizadorIniciado) {
-      let inputNumero = document.querySelector("#inputNumero").value;
+        let inputNumero = document.querySelector("#inputNumero").value;
         tiempoRestante = parseInt(inputNumero, 10);
         if (tiempoRestante <= 0 || isNaN(tiempoRestante)) {
             alert('Ingrese un número válido en segundos')
             return;
         }
-        }
-        iniciarTemporizador();
-        temporizador = setInterval(iniciarTemporizador, 1000);
-        temporizadorIniciado = true;
+    }
+    iniciarTemporizador();
+    temporizador = setInterval(iniciarTemporizador, 1000);
+    temporizadorIniciado = true;
+     document.querySelector('#label').innerText = 'Temporizador en Marcha';
+     btnIniciar.innerText = 'Continuar';
 })
 
 btnPausar.addEventListener('click', ()=>{
     clearInterval(temporizador);
     temporizadorIniciado = false;
+     document.querySelector("#label").innerText = "Temporizador Detenido";
+     btnIniciar.innerText = 'Continuar';
 })
 
 btnReiniciar.addEventListener('click', ()=>{
-    document.querySelector("label").innerText = "Ingrese un tiempo en segundos";
-    document.querySelector("#inputNumero").value = "";
-       clearInterval(temporizador);
-       tiempoRestante = 0;
-salidaTemporizador.innerHTML = '<h3>00:00:00</h3>'
-       temporizadorIniciado = false;
+    clearInterval(temporizador);
+    tiempoRestante = 0;
+    salidaTemporizador.innerHTML = '<h3>00:00:00</h3>'
+    temporizadorIniciado = false;
+     document.querySelector("#label").innerText = "Ingrese un tiempo en segundos";
+     document.querySelector("#inputNumero").value = "";
+     btnIniciar.innerText = "Iniciar";
 })
