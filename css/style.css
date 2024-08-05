@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex-grow: 1;
+}
+@media (min-width: 768px) and (max-width: 991px){
+    #label{
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+    #inputNumero{
+        margin-right: 5px;
+    };
+}
+@media (min-width: 992px) {
+    #label{
+        padding-right: 10px;
+    }
+    #inputNumero{
+        margin-right: 240px;
+    }
+    
+}
